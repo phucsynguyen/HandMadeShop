@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Project_63135350.Models.Models_63135350.CustomerInfo>
+@{
+    ViewBag.Title = "Danh sách khách hàng";
+}
+@section naviheader{
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/Admin/Home_63135350" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/Admin/CustomerInfo" class="nav-link">Danh sách khách hàng</a>
+        </li>
+    </ul>
+}
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách khách hàng</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên khách hàng</th>
+                        <th>Phone</th>
+                        <th>Địa chỉ</th>
+                        <th>Phản hồi của khách hàng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@item.CustomerName</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Address</td>
+                                <td>
+                                    <div class="message-box">@item.Message</div>  <!-- Sử dụng div để hiển thị nội dung tin nhắn -->
+                                </td>
+
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">Không có dữ liệu</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <!-- Footer có thể thêm nội dung nếu cần -->
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->
+
+@section styles{
+    <style>
+        .message-box {
+            max-height: 100px; /* Giới hạn chiều cao của hộp tin nhắn */
+            overflow-y: auto; /* Tạo cuộn dọc khi nội dung vượt quá giới hạn */
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            word-wrap: break-word; /* Đảm bảo nội dung không bị tràn ra ngoài */
+        }
+    </style>
+}
+
+@section scripts{
+    <script>
+        // Thêm các logic JavaScript khác nếu cần thiết
+    </script>
+}

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Project_63135350.Models.Model_63135350.Category_63135350>
+@if (Model != null && Model.Any())
+{
+<ul class="navbar_menu">
+    @foreach (var item in Model)
+    {
+        if (item.Alias.Equals("trang-chu"))
+        {
+            item.Alias = "";
+        }
+    <li><a href="/@item.Alias">@item.Title</a></li>
+    }
+</ul>
+}

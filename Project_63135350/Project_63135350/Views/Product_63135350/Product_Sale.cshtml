@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Dịch vụ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/Style/styles/main_styles.css">
+
+<div class="blogs">
+    <div class="container">
+        <div class="row" style="margin-top: 200px">
+            <div class="col text-center">
+                <div class="section_title">
+                    <h2>Các dịch vụ chúng tôi cung cấp</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row blogs_container">
+            <div class="col-lg-4 blog_item_col">
+                <div class="blog_item">
+                    <div class="blog_background" style="background-image:url(/Content/Style/images/Order.png" )"></div>
+                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <h4 class="blog_title">Đặt hàng theo yêu cầu</h4>
+                        <span class="blog_meta">Tạo ra sản phẩm độc đáo dựa trên yêu cầu và ý tưởng của bạn</span>
+                        <a class="blog_more" href="@Url.Action("Service", "Product_63135350")">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 blog_item_col">
+                <div class="blog_item">
+                    <div class="blog_background" style="background-image:url(/Content/Style/images/gift.png" )"></div>
+                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <h4 class="blog_title">Gói sản phẩm</h4>
+                        <span class="blog_meta">Biến món quà của bạn thành một kiệt tác nghệ thuật với dịch vụ gói sản phẩm chuyên nghiệp</span>
+                        <a class="blog_more" href="@Url.Action("Service", "Product_63135350")">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 blog_item_col">
+                <div class="blog_item">
+                    <div class="blog_background" style="background-image:url(/Content/Style/images/fix.png" )"></div>
+                    <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <h4 class="blog_title">Sữa chữa và bảo hành</h4>
+                        <span class="blog_meta">Bảo hành và sửa chữa sản phẩm để duy trì chất lượng và vẻ đẹp của chúng</span>
+                        <a class="blog_more" href="@Url.Action("Service", "Product_63135350")">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

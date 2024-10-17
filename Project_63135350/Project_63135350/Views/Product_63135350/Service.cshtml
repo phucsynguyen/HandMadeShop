@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Phản hồi";
+}
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="~/Content/Style/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/Style/styles/categories_responsive.css">
+
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Phản hồi</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Phản hồi khách hàng</h1>
+                    <p>Bạn hãy cập nhật thông tin</p>
+                </div>
+            </div>
+            <hr />
+
+            <div class="row">
+                <div id="show_success"></div>
+                <div class="col-md-9">
+                    @Html.Action("Partial_PhanHoi", "Product_63135350")
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/Style/js/categories_custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myForm').validate({
+                rules: {
+                    'CustomerName': {
+                        required: true
+                    },
+                    'Phone': {
+                        required: true
+                    },
+                    'Address': {
+                        required: true
+                    },
+                    'Email': {
+                        required: true,
+                        email: true
+                    },
+                    'Message': {
+                        required: true,
+                    }
+                },
+                messages: {
+                    'CustomerName': 'Tên khách hàng không được để trống!',
+                    'Phone': 'Số điện thoại không được để trống!',
+                    'Address': 'Địa chỉ không được để trống!',
+                    'Email': 'Email không hợp lệ!',
+                    'Message': 'Phản hồi không được để trống!',
+                }
+            });
+        });
+    </script>
+}
+
+
+
